@@ -5,7 +5,11 @@ export type AuthActions = {
     id: number
 } | {
     type: "Log_Out",
-    id: number
+} | {
+    type: "Create_Account",
+    userName: string,
+    email: string,
+    password: string,
 }
 
 export const authReducer = (state: user[] = users, action: AuthActions) => {
@@ -15,9 +19,13 @@ export const authReducer = (state: user[] = users, action: AuthActions) => {
             copyState.map(user => user.id === action.id ? user.auth = true : user)
             return copyState
 
-            case "Log_Out":
-                
-                return copyState
+        case "Log_Out":
+            copyState.map(user => user.auth ? user.auth = false : user)
+            return copyState
+
+        case "Create_Account":
+            copyState.push({ id: users.length + 1, auth: true, isAdmin: false, name: action.userName, email: action.email, password: action.password })
+            return copyState
 
         default:
             return state

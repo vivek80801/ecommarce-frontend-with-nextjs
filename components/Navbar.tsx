@@ -6,9 +6,14 @@ const Navbar: React.FC = (): JSX.Element => {
   const [isRotated, setIsRotated] = useState(false);
   const persons = useContext<authContext>(AuthContext);
   let auth = false;
+  let isAdmin = false;
   for (let i = 0; i < persons.persons.length; i++) {
     if (persons.persons[i].auth) {
       auth = true;
+      if (persons.persons[i].isAdmin) {
+        isAdmin = true;
+        break;
+      }
       break;
     }
   }
@@ -48,17 +53,19 @@ const Navbar: React.FC = (): JSX.Element => {
                     <h1>Cart</h1>
                   </Link>
                 </li>
-                <li>
-                  <Link href="/adminlogin">
-                    <h1>Admin</h1>
-                  </Link>
-                </li>
+                {isAdmin ? (
+                  <li>
+                    <Link href="/admin">
+                      <h1>Admin</h1>
+                    </Link>
+                  </li>
+                ) : null}
                 <li>
                   <Link href="/usersprofile">
                     <h1>Edit Profile</h1>
                   </Link>
                 </li>
-                <li>
+                <li onClick={()=> persons.AuthDispatch({type:"Log_Out"})}>
                   <Link href="/">
                     <h1 title="are you sure?">Log Out</h1>
                   </Link>

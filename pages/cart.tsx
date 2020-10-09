@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link"
 import { useContext } from "react";
 import { ProductContext, productContext } from "../contexts/productContext";
 
@@ -11,9 +12,19 @@ const cart: React.FC = (): JSX.Element => {
         <link rel="icon" href="/favicon.png" type="img/png" />
         <title>Cart</title>
       </Head>
-      {products.products.map((product) =>
-        product.inCart ? <>{product.name}</> : null
-      )}
+      <div
+          style={{
+            backgroundColor: "var(--mainWhite)",
+            position: "sticky",
+            zIndex: 3,
+            top: "5rem",
+          }}
+        >
+          <Link href="/product">
+            <button className="btn btn-fixed">Back</button>
+          </Link>
+        </div>
+        
     </>
   );
 };

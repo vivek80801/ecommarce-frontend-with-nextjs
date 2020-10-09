@@ -3,7 +3,8 @@ export interface user {
     name: string;
     password: string;
     email: string;
-    auth: boolean
+    auth: boolean;
+    isAdmin: boolean;
 }
 export const users: user[] = [
     {
@@ -12,6 +13,7 @@ export const users: user[] = [
         password: "vivek",
         email: "vivek@gmail.com",
         auth: false,
+        isAdmin: true,
     },
     {
         id: 2,
@@ -19,6 +21,7 @@ export const users: user[] = [
         password: "root",
         email: "root@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 3,
@@ -26,6 +29,7 @@ export const users: user[] = [
         password: "sohan",
         email: "sohan@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 4,
@@ -33,6 +37,7 @@ export const users: user[] = [
         password: "rohan",
         email: "rohan@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 5,
@@ -40,6 +45,7 @@ export const users: user[] = [
         password: "mohan",
         email: "mohan@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 6,
@@ -47,6 +53,7 @@ export const users: user[] = [
         password: "mohit",
         email: "mohit@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 7,
@@ -54,6 +61,7 @@ export const users: user[] = [
         password: "sona",
         email: "sona@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 8,
@@ -61,6 +69,7 @@ export const users: user[] = [
         password: "mona",
         email: "mona@gmail.com",
         auth: false,
+        isAdmin: false,
     },
     {
         id: 9,
@@ -68,5 +77,6 @@ export const users: user[] = [
         password: "ram",
         email: "ram@gmail.com",
         auth: false,
+        isAdmin: false
     },
 ];

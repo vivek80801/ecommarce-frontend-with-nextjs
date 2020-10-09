@@ -7,14 +7,6 @@
   --mainBlack: rgb(170, 154, 154);
   --lightWhite: rgb(208, 199, 199);
   --lightGray: rgb(198, 183, 183);
-  /* --mainBlue: #00f;
-  --lightBlue: rgb(16, 119, 138);
-  --mainRed: rgb(133, 8, 8);
-  --lightRed: rgb(173, 24, 19);
-  --mainWhite: rgb(179, 170, 170);
-  --mainBlack: rgb(88, 88, 88);
-  --lightWhite: rgb(207, 200, 200);
-  --lightGray: rgb(136, 129, 129); */
 }
 * {
   box-sizing: border-box;
@@ -45,6 +37,7 @@ nav > ul {
 nav > ul > li {
   list-style: none;
   color: var(--mainWhite);
+  cursor: pointer;
 }
 nav > ul > li > a {
   text-decoration: none;
