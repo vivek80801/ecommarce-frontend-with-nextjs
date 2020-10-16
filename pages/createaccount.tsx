@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import { AuthContext, authContext } from "../contexts/authContext";
 
@@ -8,6 +8,7 @@ const CreateAccount: React.FC = (): JSX.Element => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
   return (
     <>
       <Head>

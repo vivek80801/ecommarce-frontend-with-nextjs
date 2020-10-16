@@ -24,7 +24,14 @@ export const authReducer = (state: user[] = users, action: AuthActions) => {
             return copyState
 
         case "Create_Account":
-            copyState.push({ id: users.length + 1, auth: true, isAdmin: false, name: action.userName, email: action.email, password: action.password })
+            fetch("/api/users", {
+                method: "POST",
+                body: JSON.stringify({ name: action.userName, email: action.email, password: action.password }),
+                headers: {
+                    "Accept":"Application/json, text/plain, */* ",
+                    "Content-type": "Application/json"
+                }
+            }).then(res => res.json()).then(data => copyState.push(data)).catch(err => console.log(err))
             return copyState
 
         default:
